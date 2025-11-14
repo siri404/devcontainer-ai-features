@@ -12,7 +12,7 @@ check "gemini-cli command exists" which gemini-cli
 check "gemini-cli is executable" test -x /usr/local/bin/gemini-cli
 check "python3 is installed" python3 --version
 check "google-generativeai package is installed" python3 -c "import google.generativeai"
-check "gemini-cli shows help without API key" gemini-cli 2>&1 | grep -q "Gemini CLI"
+check "gemini-cli shows usage info" gemini-cli 2>&1 | grep "Usage"
 
 # Report result
 reportResults
