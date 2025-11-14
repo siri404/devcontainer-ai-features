@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This test file will be executed against an auto-generated devcontainer.json that
-# includes the 'color' Feature with no options.
+# includes the 'gemini-cli' Feature with no options.
 #
 # For more information, see: https://github.com/devcontainers/cli/blob/main/docs/features/test.md
 #
@@ -9,14 +9,14 @@
 # {
 #    "image": "<..some-base-image...>",
 #    "features": {
-#      "color": {}
+#      "gemini-cli": {}
 #    },
 #    "remoteUser": "root"
 # }
 #
 # Thus, the value of all options will fall back to the default value in the
 # Feature's 'devcontainer-feature.json'.
-# For the 'color' feature, that means the default favorite color is 'red'.
+# For the 'gemini-cli' feature, that means the default version is 'latest'.
 #
 # These scripts are run as 'root' by default. Although that can be changed
 # with the '--remote-user' flag.
@@ -24,7 +24,7 @@
 # This test can be run with the following command:
 #
 #    devcontainer features test    \ 
-#               --features color   \
+#               --features gemini-cli   \
 #               --remote-user root \
 #               --skip-scenarios   \
 #               --base-image mcr.microsoft.com/devcontainers/base:ubuntu \
@@ -40,8 +40,12 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "validate favorite color" color | grep 'my favorite color is red'
+check "gemini-cli command exists" which gemini-cli
+check "gemini-cli is executable" test -x /usr/local/bin/gemini-cli
+check "python3 is installed" python3 --version
+check "google-generativeai package is installed" python3 -c "import google.generativeai"
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.
 reportResults
+

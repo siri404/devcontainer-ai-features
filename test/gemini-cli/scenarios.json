@@ -1,0 +1,17 @@
+{
+    "gemini_cli_basic": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gemini-cli": {}
+        }
+    },
+    "gemini_cli_with_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:focal",
+        "features": {
+            "gemini-cli": {
+                "version": "latest"
+            }
+        }
+    }
+}
+
