@@ -35,6 +35,34 @@ fi
 echo "Installing @google/gemini-cli package..."
 npm install -g @google/gemini-cli
 
+# If an API key was provided, set it up in the environment
+if [ -n "${APIKEY}" ] && [ "${APIKEY}" != "" ]; then
+    echo "Setting up GEMINI_API_KEY environment variable..."
+    
+    # Add to /etc/environment for system-wide access
+    echo "GEMINI_API_KEY=${APIKEY}" >> /etc/environment
+    
+    # Add to shell profiles for interactive shells
+    cat >> /etc/profile.d/gemini-cli.sh << EOF
+export GEMINI_API_KEY="${APIKEY}"
+EOF
+    chmod +x /etc/profile.d/gemini-cli.sh
+    
+    # Also set for bash users
+    if [ -f "/etc/bash.bashrc" ]; then
+        echo "export GEMINI_API_KEY=\"${APIKEY}\"" >> /etc/bash.bashrc
+    fi
+    
+    # Set for zsh users
+    if [ -d "/etc/zsh" ]; then
+        echo "export GEMINI_API_KEY=\"${APIKEY}\"" >> /etc/zsh/zshenv
+    fi
+    
+    echo "API key configured successfully"
+else
+    echo "No API key provided. You can set it later via GEMINI_API_KEY environment variable"
+fi
+
 echo "Gemini CLI installation complete!"
 echo "Use 'gemini' command to interact with Google's Gemini AI models"
 
