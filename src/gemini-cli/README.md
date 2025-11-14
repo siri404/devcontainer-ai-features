@@ -1,7 +1,7 @@
 
 # Gemini CLI (gemini-cli)
 
-Installs the Google Gemini CLI tool for interacting with Google's Gemini AI models
+Installs the official Google Gemini CLI tool (`@google/gemini-cli`) for interacting with Google's Gemini AI models
 
 ## Example Usage
 
@@ -22,14 +22,17 @@ Installs the Google Gemini CLI tool for interacting with Google's Gemini AI mode
 
 ## Usage
 
-After installation, you can use the `gemini-cli` command to interact with Google's Gemini AI models:
+After installation, you can use the `gemini` command to interact with Google's Gemini AI models:
 
 ```bash
 # Send a prompt to Gemini
-gemini-cli "What is the capital of France?"
+gemini "What is the capital of France?"
 
 # Show version information
-gemini-cli --version
+gemini --version
+
+# Show help
+gemini --help
 ```
 
 ## Configuration

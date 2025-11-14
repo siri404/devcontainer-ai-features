@@ -8,11 +8,11 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "gemini-cli command exists" which gemini-cli
-check "gemini-cli is executable" test -x /usr/local/bin/gemini-cli
-check "python3 is installed" python3 --version
-check "google-generativeai package is installed" python3 -c "import google.generativeai"
-check "gemini-cli shows usage info" gemini-cli 2>&1 | grep "Usage"
+check "node is installed" node --version
+check "npm is installed" npm --version
+check "gemini command exists" which gemini
+check "@google/gemini-cli package is installed" npm list -g @google/gemini-cli
+check "gemini shows usage info" gemini --help 2>&1 | grep -i "gemini\|usage\|command"
 
 # Report result
 reportResults

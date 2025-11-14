@@ -40,10 +40,10 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "gemini-cli command exists" which gemini-cli
-check "gemini-cli is executable" test -x /usr/local/bin/gemini-cli
-check "python3 is installed" python3 --version
-check "google-generativeai package is installed" python3 -c "import google.generativeai"
+check "node is installed" node --version
+check "npm is installed" npm --version
+check "gemini command exists" which gemini
+check "@google/gemini-cli package is installed" npm list -g @google/gemini-cli
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.
