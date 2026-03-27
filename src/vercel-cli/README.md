@@ -7,7 +7,7 @@ Installs the Vercel CLI for deploying and managing projects, including AI SDK sc
 
 ```json
 "features": {
-    "ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1": {}
+    "ghcr.io/zynedigital/devcontainer-ai-features/vercel-cli:1": {}
 }
 ```
 
@@ -46,4 +46,4 @@ You can disable telemetry by setting the `telemetry` option to `false` in your `
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/siri404/devcontainer-ai-features/blob/main/src/vercel-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/zynedigital/devcontainer-ai-features/blob/main/src/vercel-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

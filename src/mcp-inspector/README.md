@@ -7,7 +7,7 @@ Installs the Model Context Protocol (MCP) Inspector, the official tool for testi
 
 ```json
 "features": {
-    "ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1": {}
+    "ghcr.io/zynedigital/devcontainer-ai-features/mcp-inspector:1": {}
 }
 ```
 
@@ -22,4 +22,4 @@ Installs the Model Context Protocol (MCP) Inspector, the official tool for testi
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/siri404/devcontainer-ai-features/blob/main/src/mcp-inspector/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/zynedigital/devcontainer-ai-features/blob/main/src/mcp-inspector/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
